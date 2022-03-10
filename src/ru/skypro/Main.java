@@ -1,14 +1,11 @@
 package ru.skypro;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main{
 
     public static void main ( String[] args ) {
-        List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7,8,8,8,8));
+        List<Integer> nums = new ArrayList<>(List.of(1, 1, 36,12, 3, 26,4, 4, 5, 5, 6, 7,2));
         List<String> names = new ArrayList<>(List.of(
                 "Георгий","Амелия","Егор","Макар","Евгения",
                 "Анастасия","Ярослав","Амелия","Ярослав","Амелия"));
@@ -29,11 +26,12 @@ public class Main{
         Set<Integer> uniqueEvenNumbers = new HashSet<>();
         for (Integer num : nums) {
             if (num % 2 == 0 & !uniqueEvenNumbers.contains(num)) {
-                System.out.print(num + " ");
                 uniqueEvenNumbers.add(num);
             }
         }
-        System.out.println();
+        ArrayList<Integer> sortedEvenNumbers = new ArrayList<>(uniqueEvenNumbers);
+        Collections.sort(sortedEvenNumbers);
+        System.out.println(sortedEvenNumbers);
     }
     public static void printUniqueWords ( List<String> wordList ) {
         Set<String> uniqueNames = new HashSet<>();
